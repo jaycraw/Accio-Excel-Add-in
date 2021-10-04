@@ -3,6 +3,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Accio](
+	--Primary keyed such that no user can use the same nickname twice. However, user can give the same workbook multiple nicknames
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[Username] [varchar](25) NOT NULL,
 	[CommonName] [varchar](50) NOT NULL,
