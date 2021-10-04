@@ -8,8 +8,6 @@ Opening workbook: in any workbook, type !open or !accio followed by the nickname
 
 Deleting shortcuts: !forget followed by the nickname you would like to delete
 
-Open read me: !readme 
-
 Enable accio with =startAccio
 
 Disable accio with =stopAccio
