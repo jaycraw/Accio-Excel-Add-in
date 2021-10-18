@@ -1,0 +1,162 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+  <ribbon>
+      <!--list of built in icons: https://bert-toolkit.com/imagemso-list.html-->
+      <!--Documentation for customUI: https://docs.microsoft.com/en-us/openspecs/office_standards/ms-customui/190f51e6-3a3c-4cf8-affb-cec9b906aae4-->
+    <tabs>  
+      <tab id ="rcNewTab" label = "ERM" >
+        <!--Group to hold risk control monrning tasks-->
+        <group id="morningGroup" label="Morning Tasks" insertAfterMso="GroupEditingExcel">
+            <!--openWorkbook buttons directly take file path and attempt to open with no alterations-->
+            <button id="repoButton" label="Repo" size="large" 
+            onAction="openWorkbook" imageMso="Fish"
+            tag = "P:\RiskControl\Repo\RepoData2.xlsm" />
+		
+            <!--openDatedFile buttons need to be fed a date format encased in hashtags and will open the most recent version-->
+            <button id="tfButton" label="Total Firm" size="large" 
+            onAction="openDatedFile" imageMso="Spade"
+            tag = "P:\RiskControl\Total Firm P&amp;L\total firm 2 #mm-dd-yy#.xlsm"
+            />  
+            
+            <button id="tspireButton" label="TS/PI/RE" size="normal" 
+            onAction='openDatedFile' imageMso="ObjectsGroup" 
+            tag = "P:\RiskControl\Lueking\Risk Report - Secured - Unsecured\Secured-Unsecured #yyyy-mm-dd#v3.xlsm"
+            />
+            	
+            <button id="divchkButton" label="Div Check" size="normal" 
+            onAction="openWorkbook" imageMso="BookmarkInsert"
+            tag = "P:\RiskControl\VPM Checks\DIV Check -- PPF vs EV Table.xlsm" />       
+                
+            <button id="csllButton" label="CS Levered Loans" size="normal" 
+            onAction="openWorkbook" imageMso="ShowGridlines_HideGridlines"
+            tag = "P:\CREDIT\CLOs\CS Levered Loan Index Data_LATEST_06.24.2020_TF_AV.xlsm" />           	
+            	        
+            
+        </group>
+        <!--Group for our various midday items-->
+        <group id="uploaderGroup" label="Intraday Reporting" insertAfterMso="GroupEditingExcel">
+            <button id="cmButton" label="Current Markets" size="normal" 
+            onAction="openWorkbook" imageMso="ChartTrendline"
+            tag = "P:\RiskControl\Intraday\Market Update.xlsm" /> 
+            
+            <button id="intradayButton" label="Intraday" size="normal" 
+            onAction="openWorkbook" imageMso="MagicEightBall"
+            tag = "P:\RiskControl\Intraday\New Template\New Intraday Template v1-LIVE V2.xlsm" /> 
+            <!--dropdown menu containing liks to our various uploaders-->
+            <menu id="uploaderMenu" label="Uploaders">
+            		<button id="dvdAccrualButton" label="Dividend Accrual" 
+            		onAction='openWorkbook' imageMso="AutoSum" 
+            		tag = "P:\RiskControl\Trading Resources\Bloomberg\CIX\Equity Dividend Accrual Tool.xlsm" />
+            		
+            		<button id="equityUploadButton" label="Equity Uploader" 
+            		onAction='openWorkbook' imageMso="TableExcelSpreadsheetInsert" 
+            		tag = "P:\RiskControl\EIKON spreadsheets\EIKON Equity Uploader v5.xlsm" />
+             		
+             		<button id="marketQButton" label="MarketQ Uploader" 
+            		onAction='openWorkbook' imageMso="DatabaseInsert" 
+            		tag = "P:\RiskControl\EIKON spreadsheets\MQ pricing uploader - Eikon v2.xlsm" />
+            </menu>   
+        </group> 
+        <!--Group for various afternoon tasks-->   
+        <group id="afternoonGroup" label="Afternoon Tasks" insertAfterMso="GroupEditingExcel">
+            <button id="pxButton" label="Main Pricing" size="large" 
+            onAction="openWorkbook" imageMso="Heart"
+            tag = "P:\RiskControl\Pricing\Pricing File v1.xlsm" />       
+ 
+             <button id="getPricesButton" label="Get Prices" size="large" 
+            onAction="openWorkbook" imageMso="Diamond"
+            tag = "P:\RiskControl\Pricing\Get Prices.xlsm" />    
+            
+            <button id="swptnButton" label="Swaption Pricing" size="large" 
+            onAction="openWorkbook" imageMso="GroupChartAxes"
+            tag = "P:\RiskControl\Pricing\Swaptions Pricing.xlsm" />        
+
+            <button id="yasButton" label="Yield and Spread" size="large" 
+            onAction="openWorkbook" imageMso="ApplyCurrencyFormat"
+            tag = "P:\CREDIT\Research\Historical Market Data\Spread and Yield By Credit Rating Master (Lines) ft Email Builder.xlsm" />        
+
+            <button id="fxButton" label="Fx Uploader" size="normal" 
+            onAction="openWorkbook" imageMso="ApplyCurrencyFormat"
+            tag = "P:\RiskControl\Pricing\FX rates upload.xlsm" />
+            
+            <button id="tzButton" label="TZ/Foreign Stk Uploader" size="normal" 
+            onAction="openWorkbook" imageMso="GroupInsertSymbols"
+            tag = "P:\RiskControl\Pricing\BBGPricingSheet v3.xlsm" />        
+
+            <button id="cdsButton" label="CDS Uploader" size="normal" 
+            onAction="openWorkbook" imageMso="CalculationOptionsMenu"
+            tag = "P:\RiskControl\Pricing\BBG CDS pricer v10.xlsm" />        
+        </group>
+         <!--General handy tools and workbooks-->   
+         <group id="toolsGroup" label="General Tools" insertAfterMso="GroupEditingExcel">
+            <button id="instButton" label="Instructions" size="normal" 
+            onAction="openWorkbook" imageMso="TipWizardHelp"
+            tag = "P:\RiskControl\Risk Control Instructions\Risk Control Instructions 2019-05-29.xlsm" />                  
+         
+            <button id="ppfButton" label="PPF Checker" size="normal" 
+            onAction="openWorkbook" imageMso="Club"
+            tag = "P:\RiskControl\PPF checker for Total Firm.xlsm" />                  
+          
+            <button id="emmaButton" label="Fund Return Uploader" size="normal" 
+            onAction="openWorkbook" imageMso="Forward"
+            tag = "P:\CREDIT\EMMA\Metric Collector ft Net Exposure.xlsm" />        
+            
+            <!--Easily copies values and formats into a new workbook. Useful for email attachments-->
+            <button id="cpyButton" label="Copy Selection Out" size="normal" 
+            onAction="copySelection" imageMso="Copy"
+            />                  
+
+            <button id="easyadderButton" label="Easy Adder" size="normal" 
+            onAction="openWorkbook" imageMso="HappyFace"
+            tag = "P:\RiskControl\EasyAdder.xlsm" /> 
+                   
+         </group>
+         <!--Standard weekly tasks that aren't run every day-->
+          <group id="weeklyGroup" label="Weekly Tasks" insertAfterMso="GroupEditingExcel">
+                <button id="wpaButton" label="WPA Box Checker" size="normal" 
+                onAction="openWorkbook" imageMso="GroupTextBoxArrange"
+                tag = "P:\RiskControl\Tools\WPA Box strategy checker v4.xlsm" />   
+ 
+                <button id="accrualButton" label="Accrual Checker" size="normal" 
+                onAction="openWorkbook" imageMso="IndentIncrease"
+                tag = "P:\RiskControl\Accrual Checker\Accrual checker v2.xlsm" />  
+                
+                <button id="top20Button" label="Top 20 MTD" size="normal" 
+                onAction="openDatedFile" imageMso="AdpOutputOperationsSortAscending"
+                tag = "P:\RiskControl\Top 20 Gainers and Losers - MTD\MTD Top 20 Gainers and Losers - #yyyy-mm-dd#.xlsm"
+                />    
+                
+                <button id="top30Button" label="Top 30 YTD" size="normal" 
+                onAction="openDatedFile" imageMso="AdpOutputOperationsSortDescending"
+                tag = "P:\RiskControl\Top 20 Gainers and Losers - YTD\Top 30 Gainers and Losers #mm-dd-yyyy#.xlsm"
+                />
+                
+                <button id="omButton" label="Outside Managers" size="normal" 
+                onAction="openWorkbook" imageMso="BorderThickOutside"
+                tag = "‪P:\P&amp;L R\Outside Managers 2021 v3.xlsm" />  
+                
+                <button id="capButton" label="HSBC Capacity Scenarios" size="normal" 
+                onAction="openWorkbook" imageMso="HighImportance"
+                tag = "P:\CREDIT\Q Funds\HSBC Fund Allocation Analysis\HSBC Account Status - #m.d.yy#.xlsm"
+                />    
+          </group>    
+           <!--workbooks and files relating to risk report-->     
+          <group id="rrGroup" label="Risk Report" insertAfterMso="GroupEditingExcel">    
+           
+                <button id="rrsrcButton" label="RR Source Data" size="normal" 
+                onAction="openWorkbook" imageMso="DatabaseQueryNew"
+                tag = "P:\RiskControl\Risk Report\Risk Report Source Data v1.xlsm" /> 
+                
+                <button id="fxExposButton" label="FX Exposure" size="normal" 
+                onAction="openWorkbook" imageMso="FunctionWizard"
+                tag = "P:\CFO Common Files\FOREIGN CURRENCY TRANSACTION\FX Exposure template.xlsm" />    
+                <!--opens the main risk report folder, as we don't always want to open the most recent version-->
+                <button id="rrFolderButton" label="Open RR Folder" size="normal" 
+                onAction="openFolder" imageMso="Folder"
+                tag = "P:\CREDIT\Risk Report"
+                />            
+          </group>
+      </tab>
+
+    </tabs>
+  </ribbon>
+</customUI>
