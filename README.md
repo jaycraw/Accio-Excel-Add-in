@@ -1,13 +1,6 @@
-# Accio-Excel-Add-in
-Add-in that allows you to summon workbooks with nicknames stored in a SQL table
+# Risk Control-Excel-Add-in
+Example excel add in using the customUI schema: https://docs.microsoft.com/en-us/openspecs/office_standards/ms-customui/190f51e6-3a3c-4cf8-affb-cec9b906aae4
 
+Straightforward way to build bookmarks to frequently used files, or other macros that can be used in many workbooks
 
-Saving a shortcut: while in the workbook you want to name, type !name followed by desired nickname. This will upload a row to SQL table
-
-Opening workbook: in any workbook, type !open or !accio followed by the nickname you would like to open
-
-Deleting shortcuts: !forget followed by the nickname you would like to delete
-
-Enable accio with =startAccio
-
-Disable accio with =stopAccio
+Have included XML file that drives the custom tab, VBA macros, as well as the xlam add-in file itself
